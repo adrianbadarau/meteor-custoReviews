@@ -1,0 +1,21 @@
+<template name="home">
+	<h1>Products Reviews</h1>
+	<div class="row">
+		{{#each products}}
+			<div class="col-md-3">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title"><a href="/product/{{name}}">{{name}}</a></h3>
+				  </div>
+				  <div class="panel-body">
+				  	<img src="{{image}}" alt="" class="full">
+				  	<hr>
+				    {{truncateText description 50}}
+				  </div>
+				</div>
+			</div>
+		{{else}}
+			<p>There are no reviews</p>
+		{{/each}}
+	</div>
+</template>
