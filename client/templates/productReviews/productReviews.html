@@ -10,14 +10,16 @@
 			<hr>
 		</div>
 	</div>
+	{{#if currentUser}}
 	<a href="{{pathFor 'newReview'}}" class="btn btn-primary">Add Review</a><br><br>
+	{{/if}}
 	<div class="row">
 		{{#each reviews}}
 			<div class="col-md-12">
 				<div class="panel panel-default">
 				  <div class="panel-body">
 				    <img src="/img/star{{rating}}.png" alt="" style="max-width:150px;"> |
-				    {{body}}
+				    {{body}} | {{formatDate reviewDate}}
 				  </div>
 				</div>
 			</div>
@@ -26,5 +28,7 @@
 		{{/each}}
 	</div>
 	<hr>
+	{{#if currentUser}}
 	<a href="{{pathFor 'newReview'}}" class="btn btn-primary">Add Review</a>
+	{{/if}}
 </template>

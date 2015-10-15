@@ -14,7 +14,12 @@
                 <ul class="nav navbar-nav">
                     <li class=""><a href="{{pathFor 'home'}}">Home</a></li>
                     <li><a href="{{pathFor 'products'}}">Products</a></li>
+                    {{#if currentUser}}
                     <li><a href="{{pathFor 'add-product'}}">Add Product</a></li>
+                    {{/if}}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{> loginButtons}} <!-- here -->
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

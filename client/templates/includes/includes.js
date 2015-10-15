@@ -20,9 +20,6 @@ Template.registerHelper('truncateText', function(text, length){
 });
 
 Template.registerHelper('getAvg', function(reviews){
-	if (reviews.length === 0) {
-		return 0;
-	};
 	sum = 0;
 	for(var i=0; i<reviews.length; i++){
 		sum += parseInt(reviews[i].rating, 10);
@@ -30,4 +27,8 @@ Template.registerHelper('getAvg', function(reviews){
 	var avg = sum / reviews.length;
 
 	return Math.round(avg);
-})
+});
+Template.registerHelper('formatDate', function(date){
+	return moment(date).format("MM-DD-YYYY");
+});
+
