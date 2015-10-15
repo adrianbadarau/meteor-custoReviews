@@ -1,0 +1,30 @@
+<template name="productReviews">
+	<h3>{{name}}</h3>
+	<div class="row">
+		<div class="col-md-2">
+			<img src="{{image}}" class="full" alt="">
+		</div>
+		<div class="col-md-10">
+			<p>Average Ratings: <img src="/img/star{{getAvg reviews}}.png" style="max-width:150px;" alt="" class="full"> </p>
+			<p>{{description}}</p>
+			<hr>
+		</div>
+	</div>
+	<a href="{{pathFor 'newReview'}}" class="btn btn-primary">Add Review</a><br><br>
+	<div class="row">
+		{{#each reviews}}
+			<div class="col-md-12">
+				<div class="panel panel-default">
+				  <div class="panel-body">
+				    <img src="/img/star{{rating}}.png" alt="" style="max-width:150px;"> |
+				    {{body}}
+				  </div>
+				</div>
+			</div>
+		{{else}}
+			<p>There are no reviews</p>
+		{{/each}}
+	</div>
+	<hr>
+	<a href="{{pathFor 'newReview'}}" class="btn btn-primary">Add Review</a>
+</template>

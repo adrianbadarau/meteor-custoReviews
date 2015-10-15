@@ -1,5 +1,5 @@
-Template.addReview.events({
-	'submit #addReview': function (event) {
+Template.addProduct.events({
+	'submit #addProduct': function (event) {
 		event.preventDefault();
 
 		var name = event.target.name.value;
@@ -40,7 +40,7 @@ Template.addReview.events({
 		event.target.description.value = "";
 		event.target.is_featured.value = "";
 
-		FlashMessages.sendSuccess("Review Added");
+		FlashMessages.sendSuccess("Product Added");
 		Router.go("/");
 	}
 });

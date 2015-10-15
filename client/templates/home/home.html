@@ -5,7 +5,7 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 				  <div class="panel-heading">
-				    <h3 class="panel-title"><a href="/product/{{name}}">{{name}}</a></h3>
+				    <h3 class="panel-title"><a href="{{pathFor 'productReviews'}}">{{name}}</a></h3>
 				  </div>
 				  <div class="panel-body">
 				  	<img src="{{image}}" alt="" class="full">
@@ -15,7 +15,7 @@
 				</div>
 			</div>
 		{{else}}
-			<p>There are no reviews</p>
+			<p>There are no products</p>
 		{{/each}}
 	</div>
 </template>
